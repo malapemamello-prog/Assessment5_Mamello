@@ -6,7 +6,7 @@ st.title("Research Publications Explorer")
 uploaded_file = st.file_uploader("Upload CSV", type=["csv"])
 if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
-st.show_dataframe(df)
+st.dataframe(df)
 st.metric("Rows", len(df))
 st.write(df.columns.tolist())
 selected_column = st.selectbox("Select column", choices=df.columns.tolist())
